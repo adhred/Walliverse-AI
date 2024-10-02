@@ -1,8 +1,14 @@
-from turtle import right
 import requests
 
+#apikey import
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
+
 API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": API_KEY}
 
 inp = input("What is your query?:")
 
